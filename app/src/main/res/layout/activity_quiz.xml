@@ -15,13 +15,73 @@
             android:orientation="horizontal"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_weight="0.8"></LinearLayout>
+            android:layout_weight="0.8"
+            android:layout_marginBottom="20dp">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/imageView2"
+                android:src="@mipmap/drop"
+                android:layout_weight="2.1"
+                android:layout_marginRight="20dp" />
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/scrollView"
+                android:layout_weight="1"
+                android:fillViewport="false">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="New Text"
+                    android:id="@+id/question"
+                    android:textSize="20dp" />
+            </ScrollView>
+
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_weight="0.5"></LinearLayout>
+            android:layout_weight="0.5"
+            android:gravity="center_vertical"
+            android:layout_marginBottom="20dp">
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:text="ButtonTop"
+                android:id="@+id/buttonTop"
+                android:layout_weight="1"
+                android:layout_marginBottom="5dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:text="ButtonMiddleTop"
+                android:id="@+id/buttonMiddleTop"
+                android:layout_weight="1"
+                android:layout_marginBottom="5dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:text="ButtonMiddleBottom"
+                android:id="@+id/buttonMiddleBottom"
+                android:layout_weight="1"
+                android:layout_marginBottom="5dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="fill_parent"
+                android:text="ButtonBottom"
+                android:id="@+id/buttonBottom"
+                android:layout_weight="1" />
+        </LinearLayout>
 
         <LinearLayout
             android:orientation="horizontal"
@@ -30,16 +90,24 @@
             android:layout_weight="1">
 
             <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
                 android:id="@+id/imageView"
-                android:src="@mipmap/drop" />
+                android:src="@mipmap/drop"
+                android:gravity="right"
+                android:layout_gravity="right"
+                android:layout_weight="1" />
 
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="New Text"
-                android:id="@+id/textView" />
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/Score"
+                android:gravity="center_vertical|left"
+                android:layout_toLeftOf="@mipmap/drop"
+                android:layout_weight="1"
+                android:textSize="30dp"
+                android:textStyle="bold"
+                android:text="= 30" />
         </LinearLayout>
 
     </LinearLayout>
