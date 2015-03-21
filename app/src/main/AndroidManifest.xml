@@ -16,6 +16,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".Views.QuizActivity"
+            android:label="@string/title_activity_quiz" >
+        </activity>
+        <activity
+            android:name=".Views.FurtivaActivity"
+            android:label="@string/title_activity_furtiva" >
+        </activity>
+        <activity
+            android:name=".RanquingActivity"
+            android:label="@string/title_activity_ranquing" >
+        </activity>
+        <activity
+            android:name=".Views.AcercameActivity"
+            android:label="@string/title_activity_acercame" >
+        </activity>
     </application>
 
 </manifest>
