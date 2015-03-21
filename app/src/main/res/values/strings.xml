@@ -7,4 +7,10 @@
     <string name="title_activity_furtiva">FurtivaActivity</string>
     <string name="title_activity_ranquing">Ranking!</string>
     <string name="title_activity_acercame">AcercameActivity</string>
+
+<!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="Continuar">Seguir</string>
+    <string name="pregunta_encertada">Molt bé, ja tens una gota més, segueix així!</string>
+    <string name="pregunta_fallada">Has fallat la pregunta, però no et desanimis, hi ha moltes!</string>
 </resources>

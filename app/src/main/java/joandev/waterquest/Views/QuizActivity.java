@@ -1,30 +1,66 @@
 package joandev.waterquest.Views;
 
+import android.app.DialogFragment;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import Model.Quiz;
 import joandev.waterquest.R;
 
-public class QuizActivity extends ActionBarActivity {
+import static joandev.waterquest.R.*;
+
+public class QuizActivity extends ActionBarActivity implements View.OnClickListener {
 
 
+
+    int quizIdentifier;
     Quiz quiz;
+    TextView question;
+    TextView scoreTV;
+    Button buttonTop;
+    Button buttonMiddleTop;
+    Button buttonMiddleBottom;
+    Button buttonBottom;
+    int score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_quiz);
+        setContentView(layout.activity_quiz);
 
         quiz = new Quiz();
-//        for (int i = 0; i < 3; i++) {
-//            for (int j = 0; j < 5; j++) {
-//                Log.v("question " + i, " " + quiz.getQuizs().get(i).get(j));
-//            }
-//        }
+
+
+        quizIdentifier = 0; //esto se sustituiria por el identificador del NFC
+        score = 20; //aqui se pilla del sharedPreferences
+        buttonTop = (Button) findViewById(id.buttonTop);
+        buttonMiddleTop = (Button) findViewById(id.buttonMiddleTop);
+        buttonMiddleBottom = (Button) findViewById(id.buttonMiddleBottom);
+        buttonBottom = (Button) findViewById(id.buttonBottom);
+        question = (TextView) findViewById(id.question);
+        scoreTV = (TextView) findViewById(id.Score);
+        buttonTop.setOnClickListener(this);
+        buttonMiddleTop.setOnClickListener(this);
+        buttonMiddleBottom.setOnClickListener(this);
+        buttonBottom.setOnClickListener(this);
+        Log.v("COOOOOOOOOOOOORRECT", quiz.getQuizs().get(quizIdentifier).get(5));
+
+        question.setText(quiz.getQuizs().get(quizIdentifier).get(0));
+        buttonTop.setText(quiz.getQuizs().get(quizIdentifier).get(1));
+        buttonMiddleTop.setText(quiz.getQuizs().get(quizIdentifier).get(2));
+        buttonMiddleBottom.setText(quiz.getQuizs().get(quizIdentifier).get(3));
+        buttonBottom.setText(quiz.getQuizs().get(quizIdentifier).get(4));
+        scoreTV.setText("= "+score);
     }
 
 
@@ -48,5 +84,63 @@ public class QuizActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onClick(View v) {
+        boolean acertado = false;
+        switch (v.getId()) {
+            case R.id.buttonTop:
+                Log.v("Button", "1");
+                if (Integer.parseInt(quiz.getQuizs().get(quizIdentifier).get(5)) == 1) {
+                    v.setBackgroundColor(Color.GREEN);
+                    acertado = true;
+                }
+                break;
+            case R.id.buttonMiddleTop:
+                Log.v("Button", "2");
+                if (Integer.parseInt(quiz.getQuizs().get(quizIdentifier).get(5)) == 2) {
+                    v.setBackgroundColor(Color.GREEN);
+                    acertado = true;
+                }
+                break;
+            case id.buttonMiddleBottom:
+                Log.v("Button", "3");
+
+                if (Integer.parseInt(quiz.getQuizs().get(quizIdentifier).get(5)) == 3) {
+                    v.setBackgroundColor(Color.GREEN);
+                    acertado = true;
+                }
+                break;
+            case R.id.buttonBottom:
+                Log.v("Button", "4");
+
+                if (Integer.parseInt(quiz.getQuizs().get(quizIdentifier).get(5)) == 4) {
+                    v.setBackgroundColor(Color.GREEN);
+                    acertado = true;
+                }
+                break;
+        }
+        if (acertado){
+            score += 1;
+            scoreTV.setText("= "+score);
+            DialogFragment encert = new EncertFragment();
+            encert.show(getFragmentManager(), "");
+        }
+        else {
+            DialogFragment fallada = new FailFragment();
+            fallada.show(getFragmentManager(), "");
+        }
+
+    }
+    public void goToAcercame() {
+        Intent intent = new Intent(getApplicationContext(), AcercameActivity.class);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(), AcercameActivity.class);
+        startActivity(intent);
+        finish();
     }
 }

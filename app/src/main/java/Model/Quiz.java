@@ -7,12 +7,12 @@ import java.util.ArrayList;
  */
 public class Quiz {
 
-
-    private final String QuizQuestion1 = "q1";
-    private final String Quiz1Response1 = "r1";
-    private final String Quiz1Response2 = "r2";
-    private final String Quiz1Response3 = "r3";
-    private final String Quiz1Response4 = "r4";
+    private final String QuizQuestion1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id diam eget lacus rhoncus facilisis sit amet eu leo. Pellentesque non iaculis velit, at lobortis dolor. Duis congue in leo.";
+    private final String Quiz1Response1 = "Cras vehicula ultrices augue, nec porta neque.";
+    private final String Quiz1Response2 = "Consectetur adipiscing elit.  nisi nec vestibulum. Vivamus.";
+    private final String Quiz1Response3 = "Lorem ipsum dolor sit amet, sodales erat tincidunt.";
+    private final String Quiz1Response4 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+    private final int correct = 3;
 
     private final String QuizQuestion2 = "q2";
     private final String Quiz2Response1 = "r1";
@@ -36,6 +36,8 @@ public class Quiz {
         quiz1.add(Quiz1Response2);
         quiz1.add(Quiz1Response3);
         quiz1.add(Quiz1Response4);
+        quiz1.add(""+correct);
+
 
         ArrayList<String> quiz2 = new ArrayList<>();
         quiz2.add(QuizQuestion2);
