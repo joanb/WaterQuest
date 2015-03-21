@@ -20,9 +20,9 @@
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:src="@mipmap/drop"
-        android:layout_centerVertical="true"
         android:layout_alignParentRight="true"
-        android:layout_marginLeft="10dip"/>
+        android:layout_marginLeft="10dip"
+        android:layout_centerVertical="true" />
 
     <TextView
         android:id="@+id/dropNumber"

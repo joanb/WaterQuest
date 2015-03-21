@@ -4,6 +4,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
 import joandev.waterquest.R;
 
@@ -13,13 +14,18 @@ public class FurtivaActivity extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_furtiva);
+        TextView t = (TextView)findViewById(R.id.text_description);
+        t.setText("Lore pipsum dolor amet aisdaji sdjias doaish aosih " +
+                "wofid oijasodiajsdo aoisjd oaijooij  oij oij oij" +
+                "ij" +
+                "isjd aoisjd");
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_furtiva, menu);
+        //getMenuInflater().inflate(R.menu.menu_furtiva, menu);
         return true;
     }
 
