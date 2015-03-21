@@ -1,41 +1,52 @@
 package joandev.waterquest.Views;
 
-import android.support.v7.app.ActionBarActivity;
+import android.app.ListActivity;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.view.Menu;
-import android.view.MenuItem;
-
+import java.util.List;
 import joandev.waterquest.R;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import android.preference.PreferenceManager;
 
 
-public class RanquingActivity extends ActionBarActivity {
+
+public class RanquingActivity extends ListActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_ranquing);
+        List<RankingModel> list = getModel();
+        RankingAdapter adapter = new RankingAdapter(this, list);
+        setListAdapter(adapter);
     }
 
+    private List<RankingModel> getModel() {
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("pref", 0);
+        String name = pref.getString("name", "Name");
+        int drops = pref.getInt("drops", 0);
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_ranquing, menu);
-        return true;
+
+        List<RankingModel> list = new ArrayList<RankingModel>();
+        list.add(get("Mark", 21));
+        list.add(get("Jeff", 32));
+        list.add(get("Bill", 14));
+        list.add(get("Gates", 10));
+        list.add(get("Frank", 11));
+        list.add(get("Kim", 2));
+        list.add(get(name, drops));
+
+        Collections.sort(list, new Comparator<RankingModel>() {
+            @Override
+            public int compare(RankingModel r1, RankingModel r2) {
+                return r2.getDrops() - r1.getDrops();
+            }
+        });
+        return list;
     }
 
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
-
-        return super.onOptionsItemSelected(item);
+    private RankingModel get(String n,  int d) {
+        return new RankingModel(n, d);
     }
 }
