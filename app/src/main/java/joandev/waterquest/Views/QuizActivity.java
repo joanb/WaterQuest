@@ -2,17 +2,29 @@ package joandev.waterquest.Views;
 
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import Model.Quiz;
 import joandev.waterquest.R;
 
 public class QuizActivity extends ActionBarActivity {
+
+
+    Quiz quiz;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz);
+
+        quiz = new Quiz();
+//        for (int i = 0; i < 3; i++) {
+//            for (int j = 0; j < 5; j++) {
+//                Log.v("question " + i, " " + quiz.getQuizs().get(i).get(j));
+//            }
+//        }
     }
 
 
