@@ -1,5 +1,6 @@
 package joandev.waterquest.Views;
 
+import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
+import Extra.CustomArrayAdapter;
 import Extra.OnSwipeTouchListener;
 import joandev.waterquest.R;
 
@@ -25,14 +27,14 @@ public class AvatarMaker extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity_main);
 
-        ArrayList<String> listItems = new ArrayList<String>();
-        listItems.add("Item 1");
-        listItems.add("Item 2");
-        listItems.add("Item 3");
+        ArrayList<Integer> listItems = new ArrayList<Integer>();
+        listItems.add(R.drawable.abc_btn_radio_material);
+        //listItems.add("Item 2");
+        //listItems.add("Item 3");
 
         ListView swipeListView = (ListView)findViewById(R.id.swipeList);
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.item_list, listItems);
+        CustomArrayAdapter adapter = new CustomArrayAdapter(this, R.layout.item_list, listItems);
         swipeListView.setAdapter(adapter);
 
         swipeListView.setOnTouchListener(new OnSwipeTouchListener(this, swipeListView, adapter) {

@@ -10,14 +10,15 @@
         <activity
             android:name=".Views.AvatarMaker"
             android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name=".Views.QuizActivity"
-            android:label="@string/title_activity_quiz" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".Views.QuizActivity"
+            android:label="@string/title_activity_quiz" >
+
         </activity>
         <activity
             android:name=".Views.FurtivaActivity"
