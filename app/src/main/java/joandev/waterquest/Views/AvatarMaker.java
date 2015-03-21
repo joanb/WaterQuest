@@ -1,10 +1,20 @@
 package joandev.waterquest.Views;
 
+import android.media.Image;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import java.util.ArrayList;
+
+import Extra.OnSwipeTouchListener;
 import joandev.waterquest.R;
 
 
@@ -14,6 +24,30 @@ public class AvatarMaker extends ActionBarActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity_main);
+
+        ArrayList<String> listItems = new ArrayList<String>();
+        listItems.add("Item 1");
+        listItems.add("Item 2");
+        listItems.add("Item 3");
+
+        ListView swipeListView = (ListView)findViewById(R.id.swipeList);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, R.layout.item_list, listItems);
+        swipeListView.setAdapter(adapter);
+
+        swipeListView.setOnTouchListener(new OnSwipeTouchListener(this, swipeListView, adapter) {
+            @Override
+            public void onSwipeLeft() {
+                super.onSwipeLeft();
+                Toast.makeText(AvatarMaker.this, "Left Swipe. Position " + this.getItemPosition(), Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onSwipeRight() {
+                super.onSwipeRight();
+                Toast.makeText(AvatarMaker.this, "Right Swipe. Position " + this.getItemPosition(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 
@@ -38,4 +72,6 @@ public class AvatarMaker extends ActionBarActivity {
 
         return super.onOptionsItemSelected(item);
     }
+
+
 }
