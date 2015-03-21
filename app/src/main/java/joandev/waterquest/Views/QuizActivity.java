@@ -92,14 +92,12 @@ public class QuizActivity extends ActionBarActivity implements View.OnClickListe
             case R.id.buttonTop:
                 Log.v("Button", "1");
                 if (Integer.parseInt(quiz.getQuizs().get(quizIdentifier).get(5)) == 1) {
-                    v.setBackgroundColor(Color.GREEN);
                     acertado = true;
                 }
                 break;
             case R.id.buttonMiddleTop:
                 Log.v("Button", "2");
                 if (Integer.parseInt(quiz.getQuizs().get(quizIdentifier).get(5)) == 2) {
-                    v.setBackgroundColor(Color.GREEN);
                     acertado = true;
                 }
                 break;
@@ -107,7 +105,6 @@ public class QuizActivity extends ActionBarActivity implements View.OnClickListe
                 Log.v("Button", "3");
 
                 if (Integer.parseInt(quiz.getQuizs().get(quizIdentifier).get(5)) == 3) {
-                    v.setBackgroundColor(Color.GREEN);
                     acertado = true;
                 }
                 break;
@@ -115,26 +112,23 @@ public class QuizActivity extends ActionBarActivity implements View.OnClickListe
                 Log.v("Button", "4");
 
                 if (Integer.parseInt(quiz.getQuizs().get(quizIdentifier).get(5)) == 4) {
-                    v.setBackgroundColor(Color.GREEN);
                     acertado = true;
                 }
                 break;
         }
         if (acertado){
+            v.setBackgroundColor(Color.GREEN);
             score += 1;
             scoreTV.setText("= "+score);
             DialogFragment encert = new EncertFragment();
             encert.show(getFragmentManager(), "");
         }
         else {
-            DialogFragment fallada = new FailFragment();
+            v.setBackgroundColor(Color.RED);
+            DialogFragment fallada = new FailedFragment();
             fallada.show(getFragmentManager(), "");
         }
 
-    }
-    public void goToAcercame() {
-        Intent intent = new Intent(getApplicationContext(), AcercameActivity.class);
-        startActivity(intent);
     }
 
     @Override
