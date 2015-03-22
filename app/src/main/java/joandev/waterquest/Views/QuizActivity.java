@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.gitonway.lee.niftymodaldialogeffects.lib.NiftyDialogBuilder;
+
 import Extra.EncertFragment;
 import Extra.FailedFragment;
 import joandev.waterquest.R;
@@ -96,6 +98,7 @@ public class QuizActivity extends ActionBarActivity implements View.OnClickListe
     }
 
     public void onClick(View v) {
+        NiftyDialogBuilder dialogBuilder=NiftyDialogBuilder.getInstance(this);
         boolean acertado = false;
         switch (v.getId()) {
             case R.id.buttonTop:
@@ -131,15 +134,49 @@ public class QuizActivity extends ActionBarActivity implements View.OnClickListe
             score += 1;
             scoreTV.setText("= "+score);
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putInt("drops", score+1);
+            editor.putInt("drops", score);
             editor.commit();
-            DialogFragment encert = new EncertFragment();
-            encert.show(getFragmentManager(), "");
+//            DialogFragment encert = new EncertFragment();
+//            encert.show(getFragmentManager(), "");
+
+            dialogBuilder
+                    .withTitle("Pregunta encertada!")
+
+                    .withMessageColor("#FFFFFFFF")                              //def  | withMessageColor(int resid)
+                    .withDialogColor("#ff2a7180")
+                    .withMessage(getResources().getString(R.string.pregunta_encertada))
+                    .withButton1Text("Continuar")
+                    .withDuration(300)                                          //def//def gone//def gone
+                    .isCancelableOnTouchOutside(false)                           //def    | isCancelable(true)
+                    .setButton1Click(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getApplicationContext(), AcercameActivity.class);
+                            startActivity(intent);                        }
+                    })
+                    .show();
+
         }
         else {
+            dialogBuilder
+                    .withTitle("Pregunta fallada!")
+
+                    .withMessageColor("#FFFFFFFF")                              //def  | withMessageColor(int resid)
+                    .withDialogColor("#FFE74C3C")
+                    .withMessage(getResources().getString(R.string.pregunta_fallada))
+                    .withButton1Text("Continuar")
+                    .withDuration(300)                                          //def//def gone
+                    .isCancelableOnTouchOutside(false)                           //def    | isCancelable(true)
+                    .setButton1Click(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Intent intent = new Intent(getApplicationContext(), AcercameActivity.class);
+                            startActivity(intent);                        }
+                    })
+                    .show();
             v.setBackgroundColor(Color.RED);
-            DialogFragment fallada = new FailedFragment();
-            fallada.show(getFragmentManager(), "");
+//            DialogFragment fallada = new FailedFragment();
+//            fallada.show(getFragmentManager(), "");
         }
 
     }
