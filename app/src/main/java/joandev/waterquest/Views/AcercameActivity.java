@@ -11,7 +11,6 @@ import android.widget.Button;
 import joandev.waterquest.R;
 
 public class AcercameActivity extends ActionBarActivity {
-
     Button buttonQuiz;
     Button buttonDrop;
 
