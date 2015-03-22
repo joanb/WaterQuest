@@ -4,7 +4,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     android:paddingBottom="@dimen/activity_vertical_margin" tools:context=".ActivityMain"
-    android:background="#14525D">
+    android:background="#EFEFEF">
 
     <LinearLayout
         android:orientation="vertical"
@@ -18,8 +18,7 @@
             android:id="@+id/textLabel"
             android:hint="¡Dame un nombre!"
             android:editable="true"
-            android:layout_marginBottom="50dp"
-            android:textColor="#EFEFEF"/>
+            android:layout_marginBottom="50dp"/>
 
         <ListView
             android:divider="@null"
@@ -31,14 +30,15 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="¿Comenzamos?"
+            android:text="Comencem?"
             android:id="@+id/button"
             android:layout_marginTop="50dp"
             android:layout_gravity="center_horizontal"
             android:onClick="clickOnButton"
             android:background="@drawable/button"
             android:paddingLeft="10dp"
-            android:paddingRight="10dp"/>
+            android:paddingRight="10dp"
+            android:textColor="#EFEFEF"/>
 
     </LinearLayout>
 
