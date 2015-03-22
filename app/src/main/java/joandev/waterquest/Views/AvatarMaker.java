@@ -33,6 +33,11 @@ public class AvatarMaker extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity_main);
 
+        SharedPreferences preferences = getSharedPreferences("pref", this.MODE_PRIVATE);
+        String name = preferences.getString("name", null);
+        if (name != null) {
+            ((EditText)findViewById(R.id.textLabel)).setText(name);
+        };
         listViewContext = new ListViewContext();
 
         ListView swipeListView = (ListView)findViewById(R.id.swipeList);
