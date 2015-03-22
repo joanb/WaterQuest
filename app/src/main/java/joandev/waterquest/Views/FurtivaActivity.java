@@ -1,10 +1,12 @@
 package joandev.waterquest.Views;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import joandev.waterquest.R;
@@ -20,6 +22,12 @@ public class FurtivaActivity extends ActionBarActivity {
                 "wofid oijasodiajsdo aoisjd oaijooij  oij oij oij" +
                 "ij" +
                 "isjd aoisjd");
+
+        SharedPreferences sharedPreferences = getSharedPreferences("pref", 0);
+
+        ((ImageView)findViewById(R.id.imageViewHeadFurtiva)).setImageResource(sharedPreferences.getInt("head", 0));
+        ((ImageView)findViewById(R.id.imageViewBodyFurtiva)).setImageResource(sharedPreferences.getInt("body", 0));
+        ((ImageView)findViewById(R.id.imageViewLegsFurtiva)).setImageResource(sharedPreferences.getInt("legs", 0));
     }
 
 

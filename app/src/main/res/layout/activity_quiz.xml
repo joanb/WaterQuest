@@ -18,13 +18,31 @@
             android:layout_weight="0.8"
             android:layout_marginBottom="20dp">
 
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/imageView2"
-                android:src="@mipmap/drop"
-                android:layout_weight="2.1"
-                android:layout_marginRight="20dp"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_marginTop="17dp">
+
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageViewHead"
+                    android:layout_marginRight="20dp"
+                    android:adjustViewBounds="true"/>
+
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageViewBody"
+                    android:adjustViewBounds="true"/>
+
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imageViewLegs"
+                    android:adjustViewBounds="true"/>
+            </LinearLayout>
 
             <ScrollView
                 android:layout_width="match_parent"
