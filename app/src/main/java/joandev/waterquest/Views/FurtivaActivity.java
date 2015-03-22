@@ -44,4 +44,11 @@ public class FurtivaActivity extends ActionBarActivity {
         startActivity(intent);
         return super.onOptionsItemSelected(item);
     }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(), AcercameActivity.class);
+        startActivity(intent);
+        finish();
+    }
 }

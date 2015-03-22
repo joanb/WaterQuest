@@ -8,9 +8,6 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-import java.util.Timer;
-
-
 import joandev.waterquest.R;
 
 public class AcercameActivity extends ActionBarActivity {
@@ -29,14 +26,16 @@ public class AcercameActivity extends ActionBarActivity {
             public void onClick(View v) {
             Intent i = new Intent(getApplicationContext(), QuizActivity.class);
             startActivity(i);
+            finish();
             }
         });
         buttonDrop = (Button) findViewById(R.id.showLostDrop);
         buttonDrop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(getApplicationContext(), FurtivaActivity.class);
-                startActivity(i);
+            Intent i = new Intent(getApplicationContext(), FurtivaActivity.class);
+            startActivity(i);
+            finish();
             }
         });
     }
