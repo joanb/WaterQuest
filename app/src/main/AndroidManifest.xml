@@ -29,6 +29,7 @@
 
         </activity>
         <activity
+            android:theme="@style/Theme.AppCompat.Light"
             android:name=".Views.RanquingActivity"
             android:label="@string/title_activity_ranquing" >
         </activity>

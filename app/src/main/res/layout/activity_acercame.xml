@@ -7,19 +7,4 @@
     tools:context="joandev.waterquest.Views.AcercameActivity"
     android:background="@mipmap/prova2">
 
-    <Button
-        android:id="@+id/ranking_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Rànquing"
-        android:background="@drawable/button"
-        android:layout_marginBottom="68dp"
-        android:layout_marginLeft="40dp"
-        android:layout_marginStart="40dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:paddingRight="20dp"
-        android:paddingLeft="20dp"
-        android:textColor="#EEEEEE" />
 </RelativeLayout>

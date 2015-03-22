@@ -5,4 +5,7 @@
     <item android:id="@+id/action_settings" android:title="Editar avatar"
         android:orderInCategory="100" app:showAsAction="ifRoom"
         android:icon="@mipmap/drop"/>
+    <item android:id="@+id/action_bar" android:title="Editar avatar"
+        android:orderInCategory="100" app:showAsAction="ifRoom"
+        android:icon="@mipmap/ranking_icon"/>
 </menu>

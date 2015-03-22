@@ -1,6 +1,8 @@
 package joandev.waterquest.Views;
 
+import android.app.ActionBar;
 import android.app.ListActivity;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import java.util.List;
@@ -9,7 +11,8 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import android.preference.PreferenceManager;
-
+import android.support.v7.app.ActionBarActivity;
+import android.view.MenuItem;
 
 
 public class RanquingActivity extends ListActivity {
@@ -48,5 +51,14 @@ public class RanquingActivity extends ListActivity {
 
     private RankingModel get(String n,  int d) {
         return new RankingModel(n, d);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.action_settings) {
+            Intent intent = new Intent(getApplicationContext(), AvatarMaker.class);
+            startActivity(intent);
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

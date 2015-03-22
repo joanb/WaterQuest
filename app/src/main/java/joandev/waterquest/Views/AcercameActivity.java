@@ -3,7 +3,10 @@ package joandev.waterquest.Views;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBarActivity;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
@@ -13,7 +16,7 @@ import java.util.TimerTask;
 
 import joandev.waterquest.R;
 
-public class AcercameActivity extends Activity {
+public class AcercameActivity extends ActionBarActivity {
 
     Button button;
     Timer autoUpdate;
@@ -69,5 +72,25 @@ public class AcercameActivity extends Activity {
         }, 3000);
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_quiz, menu);
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        Intent intent =  null;
+        switch (item.getItemId()) {
+            case (R.id.action_settings) :
+                intent = new Intent(getApplicationContext(), AvatarMaker.class);
+                break;
+            case (R.id.action_bar):
+                intent = new Intent(getApplicationContext(), RanquingActivity.class);
+                break;
+        }
+        startActivity(intent);
+        return super.onOptionsItemSelected(item);
+    }
 }

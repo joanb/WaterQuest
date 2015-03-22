@@ -60,4 +60,6 @@ public class RankingAdapter extends ArrayAdapter<RankingModel> {
         tag.d.setText(String.valueOf(values.get(position).getDrops()));
         return rowView;
     }
+
+    
 }
