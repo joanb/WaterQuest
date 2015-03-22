@@ -20,11 +20,13 @@ public class OnSwipeTouchListener implements OnTouchListener {
     private final ListView listView;
     private final ArrayAdapter arrayAdapter;
     private int itemPosition;
+    private ListViewContext listViewContext;
 
-    public OnSwipeTouchListener(Context context, ListView listView, ArrayAdapter arrayAdapter) {
+    public OnSwipeTouchListener(Context context, ListView listView, ArrayAdapter arrayAdapter, ListViewContext listViewContext) {
         gestureDetector = new GestureDetector(context, new GestureListener());
         this.listView = listView;
         this.arrayAdapter = arrayAdapter;
+        this.listViewContext = listViewContext;
     }
 
     public void onSwipeLeft() {
@@ -35,6 +37,10 @@ public class OnSwipeTouchListener implements OnTouchListener {
 
     public int getItemPosition() {
         return itemPosition;
+    }
+
+    public ListViewContext getListViewContext() {
+        return listViewContext;
     }
 
     public boolean onTouch(View v, MotionEvent event) {
@@ -61,6 +67,7 @@ public class OnSwipeTouchListener implements OnTouchListener {
                     onSwipeRight();
                 else
                     onSwipeLeft();
+                arrayAdapter.notifyDataSetChanged();
                 return true;
             }
             return false;

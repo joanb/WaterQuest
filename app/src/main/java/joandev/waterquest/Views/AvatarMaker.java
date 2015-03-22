@@ -16,6 +16,7 @@ import android.widget.Toast;
 import java.util.ArrayList;
 
 import Extra.CustomArrayAdapter;
+import Extra.ListViewContext;
 import Extra.OnSwipeTouchListener;
 import joandev.waterquest.R;
 
@@ -27,27 +28,37 @@ public class AvatarMaker extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity_main);
 
-        ArrayList<Integer> listItems = new ArrayList<Integer>();
-        listItems.add(R.drawable.abc_btn_radio_material);
-        //listItems.add("Item 2");
-        //listItems.add("Item 3");
+        ListViewContext listViewContext = new ListViewContext();
 
         ListView swipeListView = (ListView)findViewById(R.id.swipeList);
 
-        CustomArrayAdapter adapter = new CustomArrayAdapter(this, R.layout.item_list, listItems);
+        CustomArrayAdapter adapter = new CustomArrayAdapter(this, R.layout.item_list, listViewContext.getListItems());
         swipeListView.setAdapter(adapter);
 
-        swipeListView.setOnTouchListener(new OnSwipeTouchListener(this, swipeListView, adapter) {
+        swipeListView.setOnTouchListener(new OnSwipeTouchListener(this, swipeListView, adapter, listViewContext) {
             @Override
             public void onSwipeLeft() {
-                super.onSwipeLeft();
-                Toast.makeText(AvatarMaker.this, "Left Swipe. Position " + this.getItemPosition(), Toast.LENGTH_SHORT).show();
+                ListViewContext lvc = this.getListViewContext();
+
+                if(getItemPosition() == 0)
+                    lvc.changeItemAtPosition(this.getItemPosition(), (lvc.getHeadPosition() - 1 < 0 ? 2 : lvc.getHeadPosition() -1));
+                else if(getItemPosition() == 1)
+                    lvc.changeItemAtPosition(this.getItemPosition(), (lvc.getBodyPosition() - 1 < 0 ? 2 : lvc.getBodyPosition() -1));
+                else
+                    lvc.changeItemAtPosition(this.getItemPosition(), (lvc.getLegsPosition() - 1 < 0 ? 2 : lvc.getLegsPosition() -1));
             }
 
             @Override
             public void onSwipeRight() {
-                super.onSwipeRight();
-                Toast.makeText(AvatarMaker.this, "Right Swipe. Position " + this.getItemPosition(), Toast.LENGTH_SHORT).show();
+                ListViewContext lvc = this.getListViewContext();
+
+                if(getItemPosition() == 0)
+                    lvc.changeItemAtPosition(this.getItemPosition(), (lvc.getHeadPosition() + 1 > 2 ? 0 : lvc.getHeadPosition() +1));
+                else if(getItemPosition() == 1)
+                    lvc.changeItemAtPosition(this.getItemPosition(), (lvc.getBodyPosition() + 1 > 2 ? 0 : lvc.getBodyPosition() +1));
+                else
+                    lvc.changeItemAtPosition(this.getItemPosition(), (lvc.getLegsPosition() + 1 > 2 ? 0 : lvc.getLegsPosition() +1));
+
             }
         });
     }
