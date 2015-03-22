@@ -43,18 +43,6 @@ public class ListViewContext {
         return listItems;
     }
 
-    public void setHeadPosition(int headPosition) {
-        this.headPosition = headPosition;
-    }
-
-    public void setBodyPosition(int bodyPosition) {
-        this.bodyPosition = bodyPosition;
-    }
-
-    public void setLegsPosition(int legsPosition) {
-        this.legsPosition = legsPosition;
-    }
-
     public void changeItemAtPosition(int fragment, int position) {
         switch (fragment) {
             case 0:

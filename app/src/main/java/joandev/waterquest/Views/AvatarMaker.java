@@ -1,5 +1,7 @@
 package joandev.waterquest.Views;
 
+import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.support.v7.app.ActionBarActivity;
@@ -9,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,12 +26,14 @@ import joandev.waterquest.R;
 
 public class AvatarMaker extends ActionBarActivity {
 
+    private ListViewContext listViewContext;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_activity_main);
 
-        ListViewContext listViewContext = new ListViewContext();
+        listViewContext = new ListViewContext();
 
         ListView swipeListView = (ListView)findViewById(R.id.swipeList);
 
@@ -86,7 +91,19 @@ public class AvatarMaker extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    public void clickOnButton(View v) {
+        SharedPreferences preferences = getSharedPreferences("pref", this.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("name", ((EditText) findViewById(R.id.textLabel)).getText().toString());
+        ArrayList<Integer> partsOfAvatar = (ArrayList) listViewContext.getListItems();
+        editor.putInt("head", partsOfAvatar.get(0));
+        editor.putInt("body", partsOfAvatar.get(1));
+        editor.putInt("legs", partsOfAvatar.get(2));
+        editor.commit();
 
+        Intent intent = new Intent(this, AcercameActivity.class);
+        startActivity(intent);
 
-
+        finish();
+    }
 }
