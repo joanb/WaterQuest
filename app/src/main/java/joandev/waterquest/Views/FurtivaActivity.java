@@ -1,5 +1,6 @@
 package joandev.waterquest.Views;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -40,5 +41,12 @@ public class FurtivaActivity extends ActionBarActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        Intent intent = new Intent(getApplicationContext(), AcercameActivity.class);
+        startActivity(intent);
+        finish();
     }
 }
