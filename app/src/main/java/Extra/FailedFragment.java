@@ -13,6 +13,14 @@ import joandev.waterquest.Views.AcercameActivity;
 public class FailedFragment extends android.app.DialogFragment {
 
     @Override
+    public void onDestroy() {
+        Intent intent = new Intent(getActivity(), AcercameActivity.class);
+        startActivity(intent);
+        getActivity().finish();
+        super.onDestroy();
+    }
+
+    @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         // Build the dialog and set up the button click handlers
         AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());

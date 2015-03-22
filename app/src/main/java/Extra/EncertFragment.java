@@ -15,6 +15,8 @@ public class EncertFragment extends android.app.DialogFragment {
 
     @Override
     public void onDestroy() {
+        Intent intent = new Intent(getActivity(), AcercameActivity.class);
+        startActivity(intent);
         getActivity().finish();
         super.onDestroy();
     }
