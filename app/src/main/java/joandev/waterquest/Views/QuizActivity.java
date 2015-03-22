@@ -3,6 +3,7 @@ package joandev.waterquest.Views;
 import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -13,8 +14,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import java.util.Random;
 
 import Model.Quiz;
 import joandev.waterquest.R;
@@ -34,6 +33,7 @@ public class QuizActivity extends ActionBarActivity implements View.OnClickListe
     Button buttonMiddleBottom;
     Button buttonBottom;
     int score;
+    SharedPreferences sharedPreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,10 +42,9 @@ public class QuizActivity extends ActionBarActivity implements View.OnClickListe
 
         quiz = new Quiz();
 
-        Random rn = new Random();
-        quizIdentifier =  rn.nextInt(quiz.getQuizs().size());
-
-        score = 20; //aqui se pilla del sharedPreferences
+        sharedPreferences = getSharedPreferences("pref", 0);
+        score = sharedPreferences.getInt("drops", 0);
+        quizIdentifier = 0; //esto se sustituiria por el identificador del NFC
         buttonTop = (Button) findViewById(id.buttonTop);
         buttonMiddleTop = (Button) findViewById(id.buttonMiddleTop);
         buttonMiddleBottom = (Button) findViewById(id.buttonMiddleBottom);
@@ -120,8 +119,12 @@ public class QuizActivity extends ActionBarActivity implements View.OnClickListe
         }
         if (acertado){
             v.setBackgroundColor(Color.GREEN);
+            Log.v("SCORE+1", "SCORE+1");
             score += 1;
             scoreTV.setText("= "+score);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putInt("drops", score+1);
+            editor.commit();
             DialogFragment encert = new EncertFragment();
             encert.show(getFragmentManager(), "");
         }
