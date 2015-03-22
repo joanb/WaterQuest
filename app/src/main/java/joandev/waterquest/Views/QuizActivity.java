@@ -14,11 +14,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+import joandev.waterquest.R;
+import java.util.Random;
 
 import Model.Quiz;
-import joandev.waterquest.R;
-
-import static joandev.waterquest.R.*;
 
 public class QuizActivity extends ActionBarActivity implements View.OnClickListener {
 
@@ -38,21 +37,21 @@ public class QuizActivity extends ActionBarActivity implements View.OnClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(layout.activity_quiz);
+        setContentView(R.layout.activity_quiz);
 
         quiz = new Quiz();
 
         sharedPreferences = getSharedPreferences("pref", 0);
         score = sharedPreferences.getInt("drops", 0);
 
-
-        quizIdentifier = 0; //esto se sustituiria por el identificador del NFC
-        buttonTop = (Button) findViewById(id.buttonTop);
-        buttonMiddleTop = (Button) findViewById(id.buttonMiddleTop);
-        buttonMiddleBottom = (Button) findViewById(id.buttonMiddleBottom);
-        buttonBottom = (Button) findViewById(id.buttonBottom);
-        question = (TextView) findViewById(id.question);
-        scoreTV = (TextView) findViewById(id.Score);
+        Random rn = new Random();
+        quizIdentifier =  rn.nextInt(quiz.getQuizs().size());
+        buttonTop = (Button) findViewById(R.id.buttonTop);
+        buttonMiddleTop = (Button) findViewById(R.id.buttonMiddleTop);
+        buttonMiddleBottom = (Button) findViewById(R.id.buttonMiddleBottom);
+        buttonBottom = (Button) findViewById(R.id.buttonBottom);
+        question = (TextView) findViewById(R.id.question);
+        scoreTV = (TextView) findViewById(R.id.Score);
         buttonTop.setOnClickListener(this);
         buttonMiddleTop.setOnClickListener(this);
         buttonMiddleBottom.setOnClickListener(this);
@@ -104,7 +103,7 @@ public class QuizActivity extends ActionBarActivity implements View.OnClickListe
                     acertado = true;
                 }
                 break;
-            case id.buttonMiddleBottom:
+            case R.id.buttonMiddleBottom:
                 Log.v("Button", "3");
 
                 if (Integer.parseInt(quiz.getQuizs().get(quizIdentifier).get(5)) == 3) {
