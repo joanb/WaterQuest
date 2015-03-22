@@ -40,12 +40,13 @@ public class AvatarMaker extends ActionBarActivity {
         };
 
         listViewContext = new ListViewContext();
-        /*
+
         int head = preferences.getInt("head", R.drawable.head_0);
         int body = preferences.getInt("body", R.drawable.body_0);
         int legs = preferences.getInt("legs", R.drawable.legs_0);
-        listViewContext.changeItemAtPosition(0, head);
-        */
+        listViewContext.changeItemAtResource(0, head);
+        listViewContext.changeItemAtResource(1, body);
+        listViewContext.changeItemAtResource(2, legs);
 
         ListView swipeListView = (ListView)findViewById(R.id.swipeList);
 
