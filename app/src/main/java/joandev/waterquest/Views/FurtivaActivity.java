@@ -25,21 +25,23 @@ public class FurtivaActivity extends ActionBarActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.menu_quiz, menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        Intent intent =  null;
+        switch (item.getItemId()) {
+            case (R.id.action_settings) :
+                intent = new Intent(getApplicationContext(), AvatarMaker.class);
+                break;
+            case (R.id.action_bar):
+                intent = new Intent(getApplicationContext(), RanquingActivity.class);
+                break;
         }
-
+        startActivity(intent);
         return super.onOptionsItemSelected(item);
     }
 

@@ -13,4 +13,5 @@
     <string name="Continuar">Seguir</string>
     <string name="pregunta_encertada">Molt bé, ja tens una gota més, segueix així!</string>
     <string name="pregunta_fallada">Has fallat la pregunta, però no et desanimis, hi ha moltes!</string>
+    <string name="title_activity_splash">SplashActivity</string>
 </resources>
