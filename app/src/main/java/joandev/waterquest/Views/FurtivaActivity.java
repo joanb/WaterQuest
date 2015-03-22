@@ -31,7 +31,7 @@ public class FurtivaActivity extends ActionBarActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("pref", 0);
         SharedPreferences.Editor editor = sharedPreferences.edit();
         int score = sharedPreferences.getInt("drops", 0);
-        editor.putInt("drops", score);
+        editor.putInt("drops", score+1);
         editor.commit();
 
         // Hardcoded for prototyping
