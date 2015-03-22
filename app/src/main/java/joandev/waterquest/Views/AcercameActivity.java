@@ -19,6 +19,7 @@ public class AcercameActivity extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acercame);
 
+        //Button for simulate a Quiz tag
         buttonQuiz = (Button) findViewById(R.id.showQuiz);
         buttonQuiz.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -28,6 +29,8 @@ public class AcercameActivity extends ActionBarActivity {
             finish();
             }
         });
+
+        //Button for simulate a Lost drop tag
         buttonDrop = (Button) findViewById(R.id.showLostDrop);
         buttonDrop.setOnClickListener(new View.OnClickListener() {
             @Override

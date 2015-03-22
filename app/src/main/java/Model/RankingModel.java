@@ -1,4 +1,4 @@
-package joandev.waterquest.Views;
+package Model;
 
 public class RankingModel {
 

@@ -1,17 +1,18 @@
 package joandev.waterquest.Views;
 
-import android.app.ActionBar;
 import android.app.ListActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import java.util.List;
+
+import Extra.RankingAdapter;
+import Model.RankingModel;
 import joandev.waterquest.R;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
-import android.preference.PreferenceManager;
-import android.support.v7.app.ActionBarActivity;
+
 import android.view.MenuItem;
 
 
@@ -31,6 +32,7 @@ public class RanquingActivity extends ListActivity {
         int drops = pref.getInt("drops", 0);
 
 
+        // Hardcoded users but ordered by drops
         List<RankingModel> list = new ArrayList<RankingModel>();
         list.add(get("Mark", 21));
         list.add(get("Jeff", 32));

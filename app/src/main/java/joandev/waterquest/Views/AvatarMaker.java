@@ -37,10 +37,11 @@ public class AvatarMaker extends ActionBarActivity {
         String name = preferences.getString("name", null);
         if (name != null) {
             ((EditText)findViewById(R.id.textLabel)).setText(name);
-        };
+        }
 
         listViewContext = new ListViewContext();
 
+        //Mount dynamic avatar
         int head = preferences.getInt("head", R.drawable.head_0);
         int body = preferences.getInt("body", R.drawable.body_0);
         int legs = preferences.getInt("legs", R.drawable.legs_0);
@@ -57,7 +58,7 @@ public class AvatarMaker extends ActionBarActivity {
             @Override
             public void onSwipeLeft() {
                 ListViewContext lvc = this.getListViewContext();
-
+                // Swipe diferent avatar parts
                 if(getItemPosition() == 0)
                     lvc.changeItemAtPosition(this.getItemPosition(), (lvc.getHeadPosition() - 1 < 0 ? 2 : lvc.getHeadPosition() -1));
                 else if(getItemPosition() == 1)
@@ -69,7 +70,7 @@ public class AvatarMaker extends ActionBarActivity {
             @Override
             public void onSwipeRight() {
                 ListViewContext lvc = this.getListViewContext();
-
+                // Swipe diferent avatar parts
                 if(getItemPosition() == 0)
                     lvc.changeItemAtPosition(this.getItemPosition(), (lvc.getHeadPosition() + 1 > 2 ? 0 : lvc.getHeadPosition() +1));
                 else if(getItemPosition() == 1)

@@ -7,6 +7,7 @@ import java.util.ArrayList;
  */
 public class Quiz {
 
+    //Hardcoded questions for prototyping
     private final String QuizQuestion1 = "Perquè es pot utilitzar l'aigua depurada? ";
     private final String Quiz1Response1 = "Per netejar els carrers";
     private final String Quiz1Response2 = "Per donar de beure a un gos";
@@ -34,6 +35,13 @@ public class Quiz {
     private final String Quiz4Response3 = "5";
     private final String Quiz4Response4 = "20";
     private final int correct4 = 1;
+
+    private final String QuizQuestion5 = "Un cop l'aigua arriba a mar obert, quin és el següent pas en el seu cicle";
+    private final String Quiz5Response1 = "Condensació";
+    private final String Quiz5Response2 = "Evaporització";
+    private final String Quiz5Response3 = "Filtració";
+    private final String Quiz5Response4 = "S'acaba el cicle";
+    private final int correct5 = 2;
 
 
     private ArrayList<ArrayList<String>> quizs;
@@ -77,6 +85,15 @@ public class Quiz {
         quiz4.add(Quiz4Response4);
         quiz4.add(""+correct4);
         quizs.add(quiz4);
+
+        ArrayList<String> quiz5 = new ArrayList<>();
+        quiz5.add(QuizQuestion5);
+        quiz5.add(Quiz5Response1);
+        quiz5.add(Quiz5Response2);
+        quiz5.add(Quiz5Response3);
+        quiz5.add(Quiz5Response4);
+        quiz5.add(""+correct5);
+        quizs.add(quiz5);
     }
 
     public ArrayList<ArrayList<String>> getQuizs() {

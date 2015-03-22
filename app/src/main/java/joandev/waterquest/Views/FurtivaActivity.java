@@ -24,9 +24,11 @@ public class FurtivaActivity extends ActionBarActivity {
         TextView t = (TextView)findViewById(R.id.text_description);
         ImageView i = (ImageView)findViewById(R.id.furtiva);
 
+        // Random get
         Random rn = new Random();
         int id =  rn.nextInt(4);
 
+        // Hardcoded for prototyping
         switch (id) {
             case 0:
                 i.setImageResource(R.drawable.rojo);

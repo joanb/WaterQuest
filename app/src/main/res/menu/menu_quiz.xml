@@ -4,7 +4,7 @@
     tools:context="joandev.waterquest.Views.QuizActivity">
     <item android:id="@+id/action_settings" android:title="Editar avatar"
         android:orderInCategory="100" app:showAsAction="always"
-        android:icon="@mipmap/drop"/>
+        android:icon="@drawable/avatar"/>
     <item android:id="@+id/action_bar" android:title="Editar avatar"
         android:orderInCategory="100" app:showAsAction="always"
         android:icon="@mipmap/ranking_icon"/>

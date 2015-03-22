@@ -14,17 +14,22 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:background="#ffffffff"
-        android:alpha="0" />
+        android:text="Quiz tag"
+        android:alpha="0.6"
+        android:layout_marginTop="80dp"
+        android:background="#ffffffff"/>
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:id="@+id/showLostDrop"
         android:background="#ffffffff"
-        android:alpha="0"
+        android:text="Lost drop tag"
+        android:alpha="0.6"
+        android:layout_marginTop="80dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentRight="true"/>
 
 </RelativeLayout>
