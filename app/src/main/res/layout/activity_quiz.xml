@@ -44,20 +44,13 @@
                     android:adjustViewBounds="true"/>
             </LinearLayout>
 
-            <ScrollView
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/scrollView"
-                android:layout_weight="1"
-                android:fillViewport="false">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="New Text"
-                    android:id="@+id/question"
-                    android:textSize="20dp" />
-            </ScrollView>
+                android:text="New Text"
+                android:id="@+id/question"
+                android:textSize="20dp"
+                android:gravity="center" />
 
         </LinearLayout>
 
@@ -75,7 +68,11 @@
                 android:text="ButtonTop"
                 android:id="@+id/buttonTop"
                 android:layout_weight="1"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/button"
+                android:textColor="#EFEFEF"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" />
 
             <Button
                 android:layout_width="match_parent"
@@ -83,7 +80,12 @@
                 android:text="ButtonMiddleTop"
                 android:id="@+id/buttonMiddleTop"
                 android:layout_weight="1"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/button"
+                android:textColor="#EFEFEF"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                />
 
             <Button
                 android:layout_width="match_parent"
@@ -91,14 +93,23 @@
                 android:text="ButtonMiddleBottom"
                 android:id="@+id/buttonMiddleBottom"
                 android:layout_weight="1"
-                android:layout_marginBottom="5dp" />
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/button"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textColor="#EFEFEF"/>
 
             <Button
                 android:layout_width="match_parent"
                 android:layout_height="fill_parent"
                 android:text="ButtonBottom"
                 android:id="@+id/buttonBottom"
-                android:layout_weight="1" />
+                android:layout_weight="1"
+                android:layout_marginBottom="5dp"
+                android:background="@drawable/button"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:textColor="#EFEFEF"/>
         </LinearLayout>
 
         <LinearLayout

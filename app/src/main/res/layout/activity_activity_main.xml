@@ -18,7 +18,9 @@
             android:id="@+id/textLabel"
             android:hint="¡Dame un nombre!"
             android:editable="true"
-            android:layout_marginBottom="50dp"/>
+            android:layout_marginBottom="50dp"
+            android:textAlignment="center"
+            android:gravity="center" />
 
         <ListView
             android:divider="@null"
