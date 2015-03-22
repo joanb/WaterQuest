@@ -12,6 +12,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import joandev.waterquest.R;
@@ -42,6 +43,11 @@ public class QuizActivity extends ActionBarActivity implements View.OnClickListe
         quiz = new Quiz();
 
         sharedPreferences = getSharedPreferences("pref", 0);
+
+        ((ImageView)findViewById(R.id.imageViewHead)).setImageResource(sharedPreferences.getInt("head", 0));
+        ((ImageView)findViewById(R.id.imageViewBody)).setImageResource(sharedPreferences.getInt("body", 0));
+        ((ImageView)findViewById(R.id.imageViewLegs)).setImageResource(sharedPreferences.getInt("legs", 0));
+
         score = sharedPreferences.getInt("drops", 0);
 
         Random rn = new Random();
