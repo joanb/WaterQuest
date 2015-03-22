@@ -59,4 +59,17 @@ public class ListViewContext {
         }
     }
 
+    public void changeItemAtResource(int fragment, int resource) {
+        switch (fragment) {
+            case 0:
+                listItems.set(fragment, resource);
+                break;
+            case 1:
+                listItems.set(fragment, resource);
+                break;
+            case 2:
+                listItems.set(fragment, resource);
+        }
+    }
+
 }
