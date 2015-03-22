@@ -19,17 +19,21 @@ public class Quiz {
     private final String Quiz2Response2 = "r2";
     private final String Quiz2Response3 = "r3";
     private final String Quiz2Response4 = "r4";
+    private final int correct2 = 3;
 
     private final String QuizQuestion3 = "q1";
     private final String Quiz3Response1 = "r1";
     private final String Quiz3Response2 = "r2";
     private final String Quiz3Response3 = "r3";
     private final String Quiz3Response4 = "r4";
+    private final int correct3 = 4;
 
 
     private ArrayList<ArrayList<String>> quizs;
 
     public Quiz() {
+        quizs = new ArrayList<ArrayList<String>>();
+
         ArrayList<String> quiz1 = new ArrayList<>();
         quiz1.add(QuizQuestion1);
         quiz1.add(Quiz1Response1);
@@ -37,6 +41,7 @@ public class Quiz {
         quiz1.add(Quiz1Response3);
         quiz1.add(Quiz1Response4);
         quiz1.add(""+correct);
+        quizs.add(quiz1);
 
 
         ArrayList<String> quiz2 = new ArrayList<>();
@@ -45,6 +50,8 @@ public class Quiz {
         quiz2.add(Quiz2Response2);
         quiz2.add(Quiz2Response3);
         quiz2.add(Quiz2Response4);
+        quiz2.add(""+correct2);
+        quizs.add(quiz2);
 
         ArrayList<String> quiz3 = new ArrayList<>();
         quiz3.add(QuizQuestion3);
@@ -52,9 +59,7 @@ public class Quiz {
         quiz3.add(Quiz3Response2);
         quiz3.add(Quiz3Response3);
         quiz3.add(Quiz3Response4);
-        quizs = new ArrayList<ArrayList<String>>();
-        quizs.add(quiz1);
-        quizs.add(quiz2);
+        quiz3.add(""+correct3);
         quizs.add(quiz3);
     }
 

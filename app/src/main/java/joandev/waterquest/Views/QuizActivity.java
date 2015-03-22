@@ -14,6 +14,8 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.Random;
+
 import Model.Quiz;
 import joandev.waterquest.R;
 
@@ -40,8 +42,9 @@ public class QuizActivity extends ActionBarActivity implements View.OnClickListe
 
         quiz = new Quiz();
 
+        Random rn = new Random();
+        quizIdentifier =  rn.nextInt(quiz.getQuizs().size());
 
-        quizIdentifier = 0; //esto se sustituiria por el identificador del NFC
         score = 20; //aqui se pilla del sharedPreferences
         buttonTop = (Button) findViewById(id.buttonTop);
         buttonMiddleTop = (Button) findViewById(id.buttonMiddleTop);
@@ -53,7 +56,6 @@ public class QuizActivity extends ActionBarActivity implements View.OnClickListe
         buttonMiddleTop.setOnClickListener(this);
         buttonMiddleBottom.setOnClickListener(this);
         buttonBottom.setOnClickListener(this);
-        Log.v("COOOOOOOOOOOOORRECT", quiz.getQuizs().get(quizIdentifier).get(5));
 
         question.setText(quiz.getQuizs().get(quizIdentifier).get(0));
         buttonTop.setText(quiz.getQuizs().get(quizIdentifier).get(1));
