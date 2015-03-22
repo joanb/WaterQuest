@@ -7,26 +7,33 @@ import java.util.ArrayList;
  */
 public class Quiz {
 
-    private final String QuizQuestion1 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam id diam eget lacus rhoncus facilisis sit amet eu leo. Pellentesque non iaculis velit, at lobortis dolor. Duis congue in leo.";
-    private final String Quiz1Response1 = "Cras vehicula ultrices augue, nec porta neque.";
-    private final String Quiz1Response2 = "Consectetur adipiscing elit.  nisi nec vestibulum. Vivamus.";
-    private final String Quiz1Response3 = "Lorem ipsum dolor sit amet, sodales erat tincidunt.";
-    private final String Quiz1Response4 = "Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
-    private final int correct = 3;
+    private final String QuizQuestion1 = "Perquè es pot utilitzar l'aigua depurada? ";
+    private final String Quiz1Response1 = "Per netejar els carrers";
+    private final String Quiz1Response2 = "Per donar de beure a un gos";
+    private final String Quiz1Response3 = "Per beure";
+    private final String Quiz1Response4 = "Per omplir una peixera amb peixos d'aigua dolça";
+    private final int correct = 1;
 
-    private final String QuizQuestion2 = "q2";
-    private final String Quiz2Response1 = "r1";
-    private final String Quiz2Response2 = "r2";
-    private final String Quiz2Response3 = "r3";
-    private final String Quiz2Response4 = "r4";
+    private final String QuizQuestion2 = "Hi ha fàbriques que fan aigua?";
+    private final String Quiz2Response1 = "Si";
+    private final String Quiz2Response2 = "No";
+    private final String Quiz2Response3 = "Hi ha fàbriques que l'extreuan";
+    private final String Quiz2Response4 = "Es imposible";
     private final int correct2 = 3;
 
-    private final String QuizQuestion3 = "q1";
-    private final String Quiz3Response1 = "r1";
-    private final String Quiz3Response2 = "r2";
-    private final String Quiz3Response3 = "r3";
-    private final String Quiz3Response4 = "r4";
-    private final int correct3 = 4;
+    private final String QuizQuestion3 = "Tot l'aigua del planeta es pot beure?";
+    private final String Quiz3Response1 = "Tota es pot beure";
+    private final String Quiz3Response2 = "Sols l'aigua salada";
+    private final String Quiz3Response3 = "Sols l'aigua dolça";
+    private final String Quiz3Response4 = "Sols l'aigua depurada";
+    private final int correct3 = 3;
+
+    private final String QuizQuestion4 = "Quants dies podem aguantar sense aigua?";
+    private final String Quiz4Response1 = "3";
+    private final String Quiz4Response2 = "10";
+    private final String Quiz4Response3 = "5";
+    private final String Quiz4Response4 = "20";
+    private final int correct4 = 1;
 
 
     private ArrayList<ArrayList<String>> quizs;
@@ -61,6 +68,15 @@ public class Quiz {
         quiz3.add(Quiz3Response4);
         quiz3.add(""+correct3);
         quizs.add(quiz3);
+
+        ArrayList<String> quiz4 = new ArrayList<>();
+        quiz4.add(QuizQuestion4);
+        quiz4.add(Quiz4Response1);
+        quiz4.add(Quiz4Response2);
+        quiz4.add(Quiz4Response3);
+        quiz4.add(Quiz4Response4);
+        quiz4.add(""+correct4);
+        quizs.add(quiz4);
     }
 
     public ArrayList<ArrayList<String>> getQuizs() {

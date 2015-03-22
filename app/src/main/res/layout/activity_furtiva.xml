@@ -51,6 +51,14 @@
         android:layout_marginTop="35dp"
         android:src="@mipmap/drop" />
 
+    <ImageView
+        android:id="@+id/furtiva"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="80dp"
+        android:layout_alignParentBottom="true"
+        android:src="@mipmap/drop" />
 
     <TextView
         android:id="@+id/text_description"
@@ -61,6 +69,7 @@
         android:textSize="15dp"
         android:background="#ff2154c9"
         android:textColor="#ffffffff"
+        android:layout_alignParentBottom="true"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="40dp"/>
