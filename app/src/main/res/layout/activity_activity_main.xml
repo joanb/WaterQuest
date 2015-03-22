@@ -44,4 +44,51 @@
 
     </LinearLayout>
 
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/flecha_izq_0"
+        android:src="@drawable/arrow_left"
+        android:layout_marginTop="140dp"/>
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/flecha_izq_1"
+        android:src="@drawable/arrow_left"
+        android:layout_marginTop="240dp"/>
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/flecha_izq_2"
+        android:src="@drawable/arrow_left"
+        android:layout_marginTop="340dp"/>
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/flecha_der_0"
+        android:src="@drawable/arrow_right"
+        android:layout_marginTop="140dp"
+        android:layout_marginLeft="270dp"/>
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/flecha_der_1"
+        android:src="@drawable/arrow_right"
+        android:layout_marginTop="240dp"
+        android:layout_marginLeft="270dp"/>
+
+
+    <ImageView
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:id="@+id/flecha_der_2"
+        android:src="@drawable/arrow_right"
+        android:layout_marginTop="340dp"
+        android:layout_marginLeft="270dp"/>
+
+
 </RelativeLayout>
