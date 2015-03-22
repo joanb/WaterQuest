@@ -150,7 +150,9 @@ public class QuizActivity extends ActionBarActivity implements View.OnClickListe
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(getApplicationContext(), AcercameActivity.class);
-                            startActivity(intent);                        }
+                            startActivity(intent);
+                        finish();
+                        }
                     })
                     .show();
 
@@ -169,7 +171,9 @@ public class QuizActivity extends ActionBarActivity implements View.OnClickListe
                         @Override
                         public void onClick(View v) {
                             Intent intent = new Intent(getApplicationContext(), AcercameActivity.class);
-                            startActivity(intent);                        }
+                            startActivity(intent);
+                            finish();
+                        }
                     })
                     .show();
             v.setBackgroundColor(Color.RED);
