@@ -18,7 +18,8 @@
             android:id="@+id/textLabel"
             android:hint="¡Dame un nombre!"
             android:editable="true"
-            android:layout_marginBottom="50dp" />
+            android:layout_marginBottom="50dp"
+            android:textColor="#EFEFEF"/>
 
         <ListView
             android:divider="@null"
@@ -34,7 +35,8 @@
             android:id="@+id/button"
             android:layout_marginTop="50dp"
             android:layout_gravity="center_horizontal"
-            android:onClick="clickOnButton" />
+            android:onClick="clickOnButton"
+            android:background="@drawable/button"/>
 
     </LinearLayout>
 
