@@ -6,11 +6,18 @@ import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import joandev.waterquest.R;
 import joandev.waterquest.Views.AcercameActivity;
 
 public class EncertFragment extends android.app.DialogFragment {
+
+    @Override
+    public void onDestroy() {
+        getActivity().finish();
+        super.onDestroy();
+    }
 
     @Override
     public Dialog onCreateDialog(Bundle savedInstanceState) {
