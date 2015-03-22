@@ -28,6 +28,12 @@ public class FurtivaActivity extends ActionBarActivity {
         Random rn = new Random();
         int id =  rn.nextInt(4);
 
+        SharedPreferences sharedPreferences = getSharedPreferences("pref", 0);
+        SharedPreferences.Editor editor = sharedPreferences.edit();
+        int score = sharedPreferences.getInt("drops", 0);
+        editor.putInt("drops", score);
+        editor.commit();
+
         // Hardcoded for prototyping
         switch (id) {
             case 0:
@@ -48,7 +54,6 @@ public class FurtivaActivity extends ActionBarActivity {
                 break;
         }
 
-        SharedPreferences sharedPreferences = getSharedPreferences("pref", 0);
         ((ImageView)findViewById(R.id.imageViewHeadFurtiva)).setImageResource(sharedPreferences.getInt("head", 0));
         ((ImageView)findViewById(R.id.imageViewBodyFurtiva)).setImageResource(sharedPreferences.getInt("body", 0));
         ((ImageView)findViewById(R.id.imageViewLegsFurtiva)).setImageResource(sharedPreferences.getInt("legs", 0));

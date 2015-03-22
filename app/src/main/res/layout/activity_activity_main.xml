@@ -18,7 +18,16 @@
             android:id="@+id/textLabel"
             android:hint="¡Dame un nombre!"
             android:editable="true"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="10dp"
+            android:textAlignment="center"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Llisca amb el dit les parts del teu avatar per cambiarles!"
+            android:id="@+id/textView2"
+            android:layout_marginBottom="20dp"
             android:textAlignment="center"
             android:gravity="center" />
 

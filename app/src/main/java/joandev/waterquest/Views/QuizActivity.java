@@ -136,6 +136,8 @@ public class QuizActivity extends ActionBarActivity implements View.OnClickListe
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putInt("drops", score);
             editor.commit();
+//            DialogFragment encert = new EncertFragment();
+//            encert.show(getFragmentManager(), "");
 
             dialogBuilder
                     .withTitle("Pregunta encertada!")
