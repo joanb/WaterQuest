@@ -44,6 +44,8 @@ public class QuizActivity extends ActionBarActivity implements View.OnClickListe
 
         sharedPreferences = getSharedPreferences("pref", 0);
         score = sharedPreferences.getInt("drops", 0);
+
+
         quizIdentifier = 0; //esto se sustituiria por el identificador del NFC
         buttonTop = (Button) findViewById(id.buttonTop);
         buttonMiddleTop = (Button) findViewById(id.buttonMiddleTop);
