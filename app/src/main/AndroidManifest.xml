@@ -10,6 +10,10 @@
         <activity
             android:name=".Views.AvatarMaker"
             android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".Views.QuizActivity"
@@ -26,11 +30,6 @@
         <activity
             android:name=".Views.AcercameActivity"
             android:label="@string/title_activity_acercame" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-
         </activity>
     </application>
 </manifest>
